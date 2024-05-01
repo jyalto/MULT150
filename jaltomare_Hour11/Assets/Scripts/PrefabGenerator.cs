@@ -5,11 +5,17 @@ using UnityEngine;
 public class PrefabGenerator : MonoBehaviour
 {
     public GameObject prefab;
+    public Vector3 spawnRange;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = -15; i <= 15; i+=3)
+        {
+            Vector3 spawnPosition = new Vector3(i, 4.0f, 0f);
+            Instantiate<GameObject>(prefab, spawnPosition, Quaternion.identity);
+        }
+
     }
 
     // Update is called once per frame
